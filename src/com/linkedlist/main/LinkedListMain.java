@@ -10,6 +10,8 @@ public class LinkedListMain
 {
     public static void main(String[] args)
     {
+        try
+        {
         String choice;
         String postionData;
         String input;
@@ -47,7 +49,6 @@ public class LinkedListMain
                 addLinkedList.displayLinkedList(listNode);
                 break;
             case 3:
-                listNode = deleteLinkedList.deleteElementAtStart(listNode);
                 addLinkedList.displayLinkedList(listNode);
                 break;
             case 4:
@@ -69,5 +70,9 @@ public class LinkedListMain
         }
         while (exitVariable.equals("Y"));
     }
-
+    catch (Exception e)
+    {
+        e.printStackTrace();
+    }
+}
 }

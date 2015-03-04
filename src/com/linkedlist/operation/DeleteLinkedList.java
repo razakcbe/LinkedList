@@ -5,29 +5,71 @@ import com.linkedlist.domain.ListNode;
 public class DeleteLinkedList
 {
 
-    public ListNode deleteElementAtStart(ListNode listNode)
+    public ListNode deleteElementAtStart(ListNode listNode) throws Exception
     {
-        ListNode temp = listNode;
-        temp = temp.getNext();
-        return temp;
-    }
-
-    public ListNode deleteElementAtEnd(ListNode listNode)
-    {
-        ListNode temp = listNode;
-        ListNode previous = null;
-        while(temp.getNext() != null)
+        if(listNode != null)
         {
-            previous = temp;
+            ListNode temp = listNode;
             temp = temp.getNext();
+            return temp;
         }
-        previous.setNext(null);
-        return listNode;
+        else
+        {
+            throw new Exception("List cannot be null");
+        }
+
     }
 
-    public ListNode deleteElementByData(ListNode listNode, String input)
+    public ListNode deleteElementAtEnd(ListNode listNode) throws Exception
     {
-        return listNode;
+        if(listNode != null)
+        {
+            ListNode temp = listNode;
+            ListNode previous = null;
+            while(temp.getNext() != null)
+            {
+                previous = temp;
+                temp = temp.getNext();
+            }
+            previous.setNext(null);
+            return listNode;
+        }
+        else
+        {
+            throw new Exception("List cannot be null");
+        }
+
+    }
+
+    public ListNode deleteElementByData(ListNode listNode, String input) throws Exception
+    {
+     
+        if(listNode != null)
+        {
+            ListNode temp = listNode;
+            ListNode previous = null;
+            if(temp.getData().equals(input))
+            {
+                listNode = temp.getNext();
+            }
+            else
+            {
+            while(temp != null)
+            {
+                if(temp.getData().equals(input))
+                {
+                    previous.setNext(temp.getNext());
+                }
+                previous = temp;
+                temp = temp.getNext();
+            }
+            }
+            return listNode; 
+        }
+        else
+        {
+            throw new Exception("List cannot be null");
+        }
     }
 
 }
