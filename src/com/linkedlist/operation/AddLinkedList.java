@@ -9,9 +9,7 @@ public class AddLinkedList
     {
         if (listNode == null)
         {
-            listNode = new ListNode();
-            listNode.setData(data);
-            listNode.setNext(null);
+            listNode = new ListNode(data);
         }
         else
         {
@@ -22,9 +20,7 @@ public class AddLinkedList
                 temp = temp.getNext();
             }
 
-            ListNode newNode = new ListNode();
-            newNode.setNext(null);
-            newNode.setData(data);
+            ListNode newNode = new ListNode(data);
             temp.setNext(newNode);
         }
 
@@ -45,8 +41,7 @@ public class AddLinkedList
             {
                 if (postionData.equals(temp.getData()))
                 {
-                    ListNode newNode = new ListNode();
-                    newNode.setData(data);
+                    ListNode newNode = new ListNode(data);
                     newNode.setNext(temp.getNext());
                     temp.setNext(newNode);
                 }

@@ -7,6 +7,12 @@ public class ListNode
     private ListNode next;
     
     
+    public ListNode(String data)
+    {
+        this.data = data;
+        this.next = null;
+    }
+
     public String getData()
     {
         return data;
