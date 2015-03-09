@@ -54,6 +54,10 @@ public class StackLinkedList
         {
             listNode = listNode.getNext();
         }
+        else
+        {
+            System.out.println("STACK IS EMPTY");
+        }
         return listNode;
     }
     

@@ -32,6 +32,8 @@ public class StackLinkedListMain
                 stackLinkedList.displayLinkedList(listNode);
                 break;
             case 2:
+                listNode = stackLinkedList.popStackLinkedList(listNode);
+                stackLinkedList.displayLinkedList(listNode);
                 break;
             default:
                 break;
@@ -40,6 +42,7 @@ public class StackLinkedListMain
             conti = scanner.nextLine();
         }
         while (conti.equals("Y"));
+        scanner.close();
     }
 
 }

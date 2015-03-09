@@ -10,18 +10,15 @@ public class LinkedListMain
 {
     public static void main(String[] args)
     {
-        try
-        {
         String choice;
         String postionData;
         String input;
         String exitVariable;
         ListNode listNode = null;
-        
+
         AddLinkedList addLinkedList = new AddLinkedList();
         DeleteLinkedList deleteLinkedList = new DeleteLinkedList();
-        
-        @SuppressWarnings("resource")
+
         Scanner in = new Scanner(System.in);
         System.out.println("Press 1 for Add");
         System.out.println("Press 2 for Add in the Middle");
@@ -58,7 +55,7 @@ public class LinkedListMain
             case 5:
                 System.out.println("Please enter name to delete");
                 input = in.nextLine();
-                listNode = deleteLinkedList.deleteElementByData(listNode,input);
+                listNode = deleteLinkedList.deleteElementByData(listNode, input);
                 addLinkedList.displayLinkedList(listNode);
                 break;
             default:
@@ -69,10 +66,6 @@ public class LinkedListMain
             exitVariable = in.nextLine();
         }
         while (exitVariable.equals("Y"));
+        in.close();
     }
-    catch (Exception e)
-    {
-        e.printStackTrace();
-    }
-}
 }
