@@ -22,13 +22,14 @@ public class StackLinkedListMain
         {
             System.out.println("Press 1 for PUSH");
             System.out.println("Press 2 for POP");
-            conti = scanner.nextLine();
+            choice = scanner.nextLine();
             switch (Integer.parseInt(choice))
             {
             case 1:
                 System.out.println("Enter the data");
                 input = scanner.nextLine();
-                stackLinkedList.pushStackLinkedList(listNode, input, size);
+                listNode = stackLinkedList.pushStackLinkedList(listNode, input, size);
+                stackLinkedList.displayLinkedList(listNode);
                 break;
             case 2:
                 break;

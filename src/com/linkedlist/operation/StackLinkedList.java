@@ -9,14 +9,29 @@ public class StackLinkedList
     {
         int size = getLinkedListSize(listNode);
 
-        if (size <= maxSize)
+        if (listNode == null)
         {
-            ListNode newNode = new ListNode(input);
-            while (listNode.getNext() != null)
+            listNode = new ListNode(input);
+        }
+        else
+        {
+            if (size < maxSize)
             {
-                listNode = listNode.getNext();
+                ListNode temp = listNode;
+                        
+                ListNode newNode = new ListNode(input);
+                
+                while (temp.getNext() != null)
+                {
+                    temp = temp.getNext();
+                }
+                
+                temp.setNext(newNode);
             }
-            listNode.setNext(newNode);
+            else
+            {
+                System.out.println("STACK IS FULL");
+            }
         }
         return listNode;
     }
@@ -27,8 +42,8 @@ public class StackLinkedList
 
         while (listNode != null)
         {
+            count = count + 1;
             listNode = listNode.getNext();
-            count++;
         }
         return count;
     }
@@ -40,5 +55,14 @@ public class StackLinkedList
             listNode = listNode.getNext();
         }
         return listNode;
+    }
+    
+    public void displayLinkedList(ListNode listNode)
+    {
+        while(listNode != null)
+        {
+            System.out.print(listNode.getData()+"-->");
+            listNode = listNode .getNext();
+        }
     }
 }
