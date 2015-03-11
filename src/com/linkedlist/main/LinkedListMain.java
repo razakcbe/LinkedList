@@ -25,6 +25,7 @@ public class LinkedListMain
         System.out.println("Press 3 for Delete at the start");
         System.out.println("Press 4 for Delete at the end");
         System.out.println("Press 5 for Delete Middle element");
+        System.out.println("Press 6 for Revere");
         do
         {
             System.out.println("Please Enter your choice");
@@ -58,10 +59,14 @@ public class LinkedListMain
                 listNode = deleteLinkedList.deleteElementByData(listNode, input);
                 addLinkedList.displayLinkedList(listNode);
                 break;
+            case 6:
+                listNode = addLinkedList.reverseLinkedList(listNode);
+                addLinkedList.displayLinkedList(listNode);
+                break;
+
             default:
                 break;
             }
-
             System.out.println("Please Y to continue/ N to Terminate");
             exitVariable = in.nextLine();
         }

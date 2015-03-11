@@ -59,4 +59,22 @@ public class AddLinkedList
             listNode = listNode.getNext();
         }
     }
+
+    public ListNode reverseLinkedList(ListNode listNode)
+    {
+        ListNode current = listNode;
+        ListNode prev = null;
+        ListNode next = null;
+
+        while (current != null)
+        {
+            next = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = next;
+        }
+
+        listNode = prev;
+        return listNode;
+    }
 }
