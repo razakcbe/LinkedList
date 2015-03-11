@@ -26,6 +26,7 @@ public class LinkedListMain
         System.out.println("Press 4 for Delete at the end");
         System.out.println("Press 5 for Delete Middle element");
         System.out.println("Press 6 for Revere");
+        System.out.println("Press 7 for Palindrome check");
         do
         {
             System.out.println("Please Enter your choice");

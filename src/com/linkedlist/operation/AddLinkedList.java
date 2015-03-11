@@ -1,5 +1,7 @@
 package com.linkedlist.operation;
 
+import java.util.Stack;
+
 import com.linkedlist.domain.ListNode;
 
 public class AddLinkedList
@@ -76,5 +78,33 @@ public class AddLinkedList
 
         listNode = prev;
         return listNode;
+    }
+    
+    public void checkForPalindrome(ListNode listNode)
+    {
+        ListNode head = listNode;
+        Stack<String> stack = new Stack<String>();
+        String data = null;
+        while(head != null)
+        {
+            stack.add(head.getData());
+            head = head.getNext();
+        }
+        
+        head = listNode;
+        
+        while(head != null)
+        {
+            data = stack.pop();
+            if(data.equals(head.getData()))
+            {
+                head = head.getNext();
+            }
+            else
+            {
+                System.out.println("Given Linked List is not palindrome");
+            }
+        }
+        
     }
 }
